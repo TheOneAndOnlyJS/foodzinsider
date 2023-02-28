@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Quicksand:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #1D2228;
+    color: white;
+    font-family: 'Koulen', cursive;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#text, #tags{
+    padding: 12px 12px;
+    border-radius: 30px;
+    border: none;
+}
+
+.nav-bar{
+    background-color: #FECD45;
+    color: black;
+    font-family: "Helvetica Neue", sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav-bar-child{
+    display: flex;
+    text-align: right;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-bar-child li{
+    font-size: 18px;
+}
+
+.nav-bar-child form{
+    text-align: center;
+    
+}
+
+.search-form-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+.search-form-container input{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.search-form-container button{
+    padding: 10px;
+}
+
+.nav-bar-child ul{
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    list-style: none;
+    margin-left: auto;
+}
+
+.nav-bar-child ul li{
+    margin: 0 20px;
+}
+
+.text-area-container{
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+.upload-form-container{
+    text-align: center;
+}
+
+.post-container{
+    background-color: #444;
+    flex-basis: 30%;
+    margin: 10px;
+    padding: 10px 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    animation: big-to-small ease-in-out;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+.parent-post-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10%;
+}
+
+.parent-content-container{
+    background-color: #444;
+    padding: 10px 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+    padding-top: 10%;
+}
+.content-container h1{
+    font-size: 45px;
+}
+
+.content-container p{
+    font-size: 30px;
+    padding-top: 10%;
+}
+
+.first_button{
+    color: white;
+    background-color: dodgerblue;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 10px;
+    width: 10%;
+}
+
+.purchase_button{
+    color: white;
+    background-color: #FB8122;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.users-container{
+    float: right;
+    background-color: #50C878;
+    width: 20%;
+    padding: 10px;
+    display: flex;
+}
+
+.users-container h2{
+    margin: auto;
+    color: white;
+    font-size: 30px;
+}
+
+.all_users{
+    text-align: center;
+    float: right;
+    color: white;
+}
+
+.admin_user_logo{
+    width: 25%;
+}
+
+.post-container-admin{
+    float: left;
+    background-color: #50C878;
+    width: 70%;
+    padding: 10px;
+}
+
+.each_post{
+    background-color: #222;
+    padding: 2px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.list_inst{
+    font-size: 25px;
+    padding: 10px;
+    text-align: left;
+}
+
+.list_inst li {
+    padding: 13px;
+}
+
+
+@keyframes big-to-small{
+    0%{
+        background-color: #444;
+        flex-basis: 30%;
+        margin: 10px;
+        padding: 10px 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        -ms-transform: rotate(180deg); /* IE 9 */
+        transform: rotate(180deg);
+        opacity: 0;
+    }
+
+    100%{
+        background-color: #444;
+        flex-basis: 30%;
+        margin: 10px;
+        padding: 10px 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        -ms-transform: rotate(0deg); /* IE 9 */
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    
+}
+
+@media screen and (max-width: 600px) {
+    .post-container{
+        background-color: #444;
+        flex-basis: 100%;
+        margin: 10px;
+        padding: 10px 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        animation: big-to-small ease-in-out;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+    }
+
+    .food_img{
+        width: 100%;
+    }
+
+    @keyframes big-to-small{
+        0%{
+            background-color: #444;
+            flex-basis: 100%;
+            margin: 10px;
+            padding: 10px 10px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            -ms-transform: rotate(180deg); /* IE 9 */
+            transform: rotate(180deg);
+            opacity: 0;
+        }
+    
+        100%{
+            background-color: #444;
+            flex-basis: 100%;
+            margin: 10px;
+            padding: 10px 10px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            -ms-transform: rotate(0deg); /* IE 9 */
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+    
+        
+    }
+
+    .search-form-container{
+        display: flex;
+        justify-content: center;
+        padding-top: 25%;
+    }
+    
+
+}

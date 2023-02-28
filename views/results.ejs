@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('metadata.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbar.ejs') %>
+    <div class="parent-post-container">
+        <%results.forEach(result => { %>
+            <div class="post-container">
+            <h1><%-result.strMeal%></h1>
+            <img src="<%- result.strMealThumb %>" alt="" width="100%">
+            <p>Description: <%-result.description%></p>
+            <br>
+            <% if(jwtCookie === '') {%>
+                <!--<button disabled style="background-color: lightskyblue;">Download</button>-->
+            <% } else {%>
+                <a href="/content/<%=encodeURIComponent(result.idMeal)%>"><button class="purchase_button">Read More</button></a>
+            <% } %>
+            </div>
+        <%})%>
+    </div>
+</body>
+</html>

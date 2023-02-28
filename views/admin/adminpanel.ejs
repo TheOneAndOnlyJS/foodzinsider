@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../metadata.ejs') %>
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 10px;
+    }
+</style>
+<body>
+    <div class="upload-form-container">
+        <h1 style="text-align: center;">Welcome to the Admin Panel</h1>
+        <br>
+        <br>
+        <div class="users-container">
+            <% userList.forEach(user => { %>
+                <img src="/default_user.png" alt="" class="admin_user_logo"><h2><%-user.username %></h2>
+            <% }); %>
+        </div>
+
+        <div class="post-container-admin">
+                <% postList.forEach(post => { %>
+                    <div class="each_post">
+                    <h1>Title: <%-post.title%></h1>
+                    <h2>Tags : <%-post.tags%></h2>
+                    <p>Description: <%-post.content%></p>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                    <br>
+                    <br>
+                    </div>
+                <% }); %>
+        </div>
+    </div>
+    <br>
+</body>
+</html>

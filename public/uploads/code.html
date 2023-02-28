@@ -1,0 +1,97 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHE90RN234"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JHE90RN234');
+</script>
+    <title>Home</title>
+    <style>
+      .like{
+        background-color: #0d6abb;
+        padding: 6px; 
+        width: 10%; 
+        border-radius: 10px; 
+        float: right; 
+        margin-top: -1%;
+      }
+
+      @media screen and (max-width: 700px) {
+        .like{
+        background-color: #0d6abb;
+        padding: 5px; 
+        width: 17%; 
+        border-radius: 10px; 
+        float: right; 
+        margin-top: -1%;
+      }
+      }
+    </style>
+    <h1 style="padding-top: 5%;">Code and snipets: </h1>
+    <br>
+    {% for code in codes %}
+    <article class="media content-section" style="background-color: #333; color: white; border: 2px solid #333; border-radius: 10px;">
+      <img class="rounded-circle article-img" src="https://theoneandonlyjs.github.io/test/media/default.jpg" alt="Profile Images">
+        <div class="media-body">
+          <div>
+            <a class="mr-2" href="#" style="color: white;">{{ code.author }}</a>
+            <small style="color: white;">{{ code.date|date:"F d, Y" }}</small>
+               </div>
+          <hr style="background-color: white;">
+          {% if post.picked_post ==  Null%}
+
+          {% endif %}
+          {% if not post.picked_post == Null%}
+          <p>{{ post.picked_post }}</p>
+          {% endif %}
+          <br>
+          <h2><a class="article-title" href="" style="color: white;">{{ code.title }}</a></h2>
+          <p class="article-content">{{ code.content| safe }}</p>
+          <div class="form-group" style="text-align: right;">
+            <a href="{{ code.download.url }}" download="{{ code.download.url }}"><button class="btn btn-outline-info">Download</button></a>
+            <a href="{{ code.view_code }}"><button class="btn btn-outline-info">View Code</button></a>
+        </div>
+        </div>
+      </article>
+    {% endfor %}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-end">
+    {% if is_paginated %}
+
+    {% if page_obj.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page=1">Lastest Blogs</a></li>
+      <li class="page-item"></li><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+      {% if page_obj.number == num %}
+      <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+      {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+      <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+      <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Oldest Blogs</a></li>
+    {% endif %}
+
+  {% endif %}
+
+   </ul>
+  </nav>
+  <script>
+    let copy = document.getElementById("copy");
+    let copyButton = document.getElementById("copybutton");
+
+    copyButton.onclick = function (){
+
+
+        document.execCommand("Copy");
+
+    }
+  </script>
+{% endblock content %}

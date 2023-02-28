@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('metadata.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Create New Blog</h1>
+    <div class="upload-form-container">
+    <form action="/post" method="post" enctype="multipart/form-data">
+        <input type="text" name="text" id="text" placeholder="Title">
+        <br>
+        <br>
+        <input type="text" name="tags" id="tags" placeholder="Tags"> 
+        <br>
+        <br>
+        <div class="text-area-container">
+        <textarea name="content" cols="30" rows="10" id="mytextarea" placeholder="Content"></textarea>
+        <br>
+        <br>
+        <input type="file" name="file">
+        </div>
+        <br>
+        <br>
+        <button type="submit">Create</button>
+    </form>
+   </div>
+</body>
+</html>

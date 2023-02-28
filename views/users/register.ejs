@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../metadata.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Create New user</h1>
+    <div class="upload-form-container">
+    <form action="/register" method="post">
+        <input type="text" name="user" id="text" placeholder="Username">
+        <br>
+        <br>
+        <input type="password" name="pass" id="tags" placeholder="Password"> 
+        <br>
+        <br>
+        <button type="submit">Create</button>
+    </form>
+   </div>
+</body>
+</html>

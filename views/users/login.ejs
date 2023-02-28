@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../metadata.ejs') %>
+    <title>Login</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Login</h1>
+    <div class="upload-form-container">
+    <form action="/login" method="post">
+        <input type="text" name="user" id="text" placeholder="Username">
+        <br>
+        <br>
+        <input type="password" name="pass" id="tags" placeholder="Password"> 
+        <br>
+        <br>
+        <button type="submit">Log In</button>
+    </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('metadata.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbar.ejs') %>
+    
+    <div class="search-form-container" style="top: 200px;">
+        <form action="/result" method="get">
+            <input type="text" name="query" id="" placeholder="Search Post">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <div class="parent-post-container">
+    <%newsData.forEach(post => { %>
+        <div class="post-container">
+        <img src="<%= post.strMealThumb%>" alt="" width="100%">
+        <br>
+        <br>
+        <h2><b><%-post.strMeal%></b></h2>
+        <h5 style="text-align: right;">- <%-post.author%></h5>
+        <br>
+        <br>
+        <p>Description: <%-post.description%></p>
+        <!--<%-post.file%> <br>-->
+        <br>
+        
+        <% if(jwtCookie === '') {%>
+            <!--<button disabled style="background-color: lightskyblue;">Download</button>-->
+        <% } else {%>
+           <!--<a href="/payment"><button class="purchase_button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                  </svg>
+                Purchase</button></a>>-->
+            <!--<a href="<%= post.file %>" download="Your_File"><button>Download</button></a>-->
+            <a href="/content/<%=encodeURIComponent(post.idMeal)%>"><button class="purchase_button">Read More</button></a>
+        <% } %>
+        </div>
+    <%})%>
+</div>
+</body>
+</html>

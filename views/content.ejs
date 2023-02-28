@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('metadata.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbar.ejs') %>
+    <div class="parent-content-container">
+        <%results.forEach(result => { %>
+            <div class="content-container">
+            <h1><%-result.strMeal%></h1>
+            <img src="<%-result.strMealThumb%>" width="40%" height="300vh" class="food_img">
+            <br>
+            <br>
+            <h1>Ingredience:</h1>
+            <div style="text-align: left; font-size: 20px;">
+            <br>
+            <% let i = 1 %>
+            <% while (result['strIngredient' + i]) { %>
+                <li><%= result['strMeasure' + i] %> <%= result['strIngredient' + i] %></li>
+                <% i++ %>
+            <% } %>
+            </div>
+            <br>
+            <br>
+            <h1>Instructions: </h1>
+            <div class="list_inst"><%-result.strInstructions.split(".").join("<li>")%></div>
+            <br>
+        <%})%>
+    </div>
+</body>
+</html>
