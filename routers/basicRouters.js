@@ -22,7 +22,6 @@ router.get('/', async(req, res) => {
     const news_get = await axios.get(newsAPI);
     const newsData = news_get.data.meals;
 
-    console.log(newsData)
 
     const postList = postDB.posts
     const jwtCookie = req.cookies.JWT
@@ -57,10 +56,14 @@ router.get('/result', async(req, res) => {
     const news_get = await axios.get(newsAPI);
     const newsData = news_get.data.meals;
 
+    if(Array.isArray(newsData) === true) {
+        const results = newsData;
 
-    const results = newsData;
-
-    res.render('results', {results, jwtCookie})
+        res.render('results', {results, jwtCookie});
+    }
+    else{
+        res.render('404', {jwtCookie});
+    }
 })
 
 router.get('/content/:id', async (req, res) => {

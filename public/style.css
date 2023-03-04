@@ -81,6 +81,10 @@ body{
     text-align: center;
 }
 
+.four_o_four{
+    width: 30%;
+}
+
 .post-container{
     background-color: #444;
     flex-basis: 30%;
@@ -231,6 +235,10 @@ body{
     }
 
     .food_img{
+        width: 100%;
+    }
+
+    .four_o_four{
         width: 100%;
     }
 

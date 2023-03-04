@@ -6,6 +6,13 @@
 </head>
 <body>
     <%- include('navbar.ejs') %>
+    <div class="search-form-container" style="top: 200px;">
+        <form action="/result" method="get">
+            <input type="text" name="query" id="" placeholder="Search Post">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <br>
     <div class="parent-post-container">
         <%results.forEach(result => { %>
             <div class="post-container">
